@@ -57,6 +57,11 @@ public class PracticingArrays {
          if (count2 == 3) {
              System.out.println("YES!");
          }
+// That "Fire Code"
+        
+        
+        
+        
         
     }
 

@@ -1,0 +1,124 @@
+/*
+* Sebastian Callejas
+* Period 3
+* Project: Arrays
+ */
+package arrays1;
+
+import java.util.*;
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author 18051
+ */
+public class Arrays1 {
+
+    static Scanner scan = new Scanner(System.in);
+    static DecimalFormat format = new DecimalFormat("$0.00");
+    static Random rand = new Random();
+
+    public static void main(String[] args) {
+        // question1();
+        // question2();
+        //question3();
+        //question4();
+        //question5();
+        question6();
+    }
+
+    public static void question1() {
+        //Those Five Names   
+        String[] names = new String[5];
+        System.out.println("Enter 5 names");
+        System.out.println("1.");
+        names[0] = scan.nextLine().toUpperCase();
+        System.out.println("2.");
+        names[1] = scan.nextLine().toUpperCase();
+        System.out.println("3.");
+        names[2] = scan.nextLine().toUpperCase();
+        System.out.println("4.");
+        names[3] = scan.nextLine().toUpperCase();
+        System.out.println("5.");
+        names[4] = scan.nextLine().toUpperCase();
+
+        System.out.print(java.util.Arrays.toString(names));
+    }
+
+    public static void question2() {
+        //Those 3 Booleans
+        boolean[] values = new boolean[3];
+        int count2 = 0;
+        System.out.println(" ");
+        System.out.println("Please enter 3 booleans. (EX: \"True\" \"False\" ");
+        System.out.println("1. ");
+        values[0] = scan.nextBoolean();
+        System.out.println("2. ");
+        values[1] = scan.nextBoolean();
+        System.out.println("3. ");
+        values[2] = scan.nextBoolean();
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] == false) {
+                System.out.println("NO!");
+                break;
+            } else {
+                count2++;
+            }
+
+        }
+        if (count2 == 3) {
+            System.out.println("YES!");
+        }
+    }
+
+    public static void question3() {
+        //That "Fire" Code
+        String[] object = {"firetruck", "fire drill", "fire hydrant",
+            "firefighter", "fire proof", "fire hose"};
+        String[] trimmedArray = new String[object.length];
+        for (int i = 0; i < object.length; i++) {
+            int start = object[i].indexOf("fire") + 4;
+
+            object[i] = object[i].substring(start).trim();
+        }
+        System.out.println(Arrays.toString(object));
+
+    }
+
+    public static void question4() {
+        //That deimal formatter
+        double[] spent = new double[4];
+        System.out.println("Please tell me what you spent on your family"
+                + " members.");
+        double total = 0.0;
+        for (int i = 0; i < spent.length; i++) {
+            spent[i] = scan.nextDouble();
+            total += spent[i];
+        }
+        System.out.println("Your total is going to be: " + format.format(total));
+    }
+
+    public static void question5() {
+        //Those Random Squares
+        int[] numbers = new int[5];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rand.nextInt(10) + 1;
+        }
+        System.out.println(Arrays.toString(numbers));
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] * numbers[i];
+
+        }
+        System.out.println(Arrays.toString(numbers));
+
+    }
+    public static void question6() {
+        //Those Decimals
+        double[] numbers = new double [5000];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rand.nextDouble();
+        }
+        System.out.println(Arrays.toString(numbers));
+    }
+}

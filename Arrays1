@@ -19,12 +19,13 @@ public class Arrays1 {
     static Random rand = new Random();
 
     public static void main(String[] args) {
-        // question1();
-        // question2();
-        //question3();
-        //question4();
-        //question5();
+        question1();
+        question2();
+        question3();
+        question4();
+        question5();
         question6();
+        question7();
     }
 
     public static void question1() {
@@ -74,7 +75,8 @@ public class Arrays1 {
     public static void question3() {
         //That "Fire" Code
         String[] object = {"firetruck", "fire drill", "fire hydrant",
-            "firefighter", "fire proof", "fire hose"};
+                "firefighter", "fire proof", "fire hose"};
+        System.out.println("Original Text: ");
         System.out.println(Arrays.toString(object));
         String[] trimmedArray = new String[object.length];
         for (int i = 0; i < object.length; i++) {
@@ -82,6 +84,7 @@ public class Arrays1 {
 
             object[i] = object[i].substring(start).trim();
         }
+        System.out.println("Edited Text: ");
         System.out.println(Arrays.toString(object));
 
     }
@@ -89,7 +92,7 @@ public class Arrays1 {
     public static void question4() {
         //That deimal formatter
         double[] spent = new double[4];
-        System.out.println("Please tell me what you spent on your family"
+        System.out.println("Please tell me what you spent on your 5 family members."
                 + " members.");
         double total = 0.0;
         for (int i = 0; i < spent.length; i++) {
@@ -105,12 +108,14 @@ public class Arrays1 {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = rand.nextInt(10) + 1;
         }
+        System.out.println("Original Numbers: ");
         System.out.println(Arrays.toString(numbers));
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = numbers[i] * numbers[i];
 
         }
+        System.out.println("Squared Numbers: ");
         System.out.println(Arrays.toString(numbers));
 
     }
@@ -120,6 +125,28 @@ public class Arrays1 {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = rand.nextDouble();
         }
+        System.out.println("Here are your random Decimals: ");
         System.out.println(Arrays.toString(numbers));
+    }
+    public static void question7() {
+        //That Party
+        System.out.println("How many people are invite to the party?");
+        int list = scan.nextInt();
+        String[] people = new String [list];
+        System.out.println("Alright time to make a list: ");
+        for (int i = 0; i < people.length; i++) {
+                System.out.println("Please add someone to the list --->");
+                people [i] = scan.nextLine();
+            }
+        System.out.println("Who would you like to find out about?");
+        String person = scan.nextLine();
+            for (int i = 0; i < people.length; i++){
+                if (people [i] == person){
+                    System.out.println("Yupp theyre going");
+                }
+                else {
+                    System.out.println("Sorry they couldnt make it");
+                }
+            }
     }
 }
